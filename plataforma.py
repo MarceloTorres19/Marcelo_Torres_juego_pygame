@@ -5,7 +5,7 @@ from auxiliar import Auxiliar
 class Platform:
     
     def __init__(self,x,y,width,height,type=0):
-        self.image_list= Auxiliar.getSurfaceFromSeparateFiles("my_images/tiles/({0}).png",1,10,flip=False,w=width,h=height)
+        self.image_list= Auxiliar.getSurfaceFromSeparateFiles("my_images/tiles/({0}).png",1,30,flip=False,w=width,h=height)
         
         self.image = self.image_list[type]
         self.rect = self.image.get_rect()

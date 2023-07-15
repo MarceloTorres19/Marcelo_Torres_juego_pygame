@@ -1,4 +1,4 @@
-import pygame
+import pygame,json
 
 class Auxiliar:
     @staticmethod
@@ -42,4 +42,11 @@ class Auxiliar:
             for i in range(repeat_frame):
                 lista.append(surface_fotograma)
         return lista
+    
+    @staticmethod
+    def cargar_nivel(path:str,nivel:str) -> list:
+        with open(path,"r") as archivo:
+            lista = json.load(archivo)
+        return lista["levels"][nivel]
+    
     
