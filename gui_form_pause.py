@@ -6,9 +6,6 @@ from gui_button import Button
 from gui_widget import Widget
 
 class FormPause(Form):
-    """
-    Formulario de pausa que aparece cuando el jugador apreta 'Esc'
-    """
     def __init__(self,name,master_surface,x,y,w,h,color_background,imagen_background,color_border,active):
         super().__init__(name,master_surface,x,y,w,h,color_background,imagen_background,color_border,active)
         self.text1 = Widget(master_form=self,x=35,y=25,w=240,h=70,color_background=None,color_border=None,image_background= None,text="PAUSED",font="8 BIT WONDER NOMINAL",font_size=38,font_color=C_WHITE)
@@ -29,22 +26,12 @@ class FormPause(Form):
     
 
     def cambiar_nivel(self,parametro):
-        """
-        Este metodo se encarga de cambiar el nivel del parametro donde se va a ejecutar este formulario
-
-        Parametro: recibe un str que representa el nivel actual donde trabajara el formulario
-        """
         self.boton1.on_click_param = parametro
 
     def exit_game(self,none):
         sys.exit()
 
     def update(self, lista_eventos,keys,sonidos,delta_ms,timer_1s):
-        """
-        Este metodo se encarga de actualizar el los distintos widget
-
-        Parametros: recibe una lista de eventos
-        """
         for aux_widget in self.lista_widget:
             aux_widget.update(lista_eventos,keys,delta_ms)
         for evento in lista_eventos:
@@ -53,9 +40,6 @@ class FormPause(Form):
                     self.set_active(self.boton1.on_click_param)
 
     def draw(self): 
-        """
-        Este metodo se encarga de dibujar los distintos widget en pantalla
-        """
         super().draw()
         for aux_widget in self.lista_widget:    
             aux_widget.draw()

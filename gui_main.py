@@ -29,6 +29,7 @@ level_2 = FormGameLevel(name="level_2",master_surface = screen,x=0,y=0,w=ANCHO_V
 level_3 = FormGameLevel(name="level_3",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,0,0),imagen_background= None,color_border=(255,0,255),active=False)
 form_pause = FormPause(name="pause",master_surface = screen,x=300,y=230,w=300,h=300,imagen_background="my_images/gui/menu/button/Window.png",color_background=None ,color_border=C_BLACK,active=False)
 form_pause_settings = FormPauseSettings(name="pause_settings",master_surface =screen,x=300,y=230,w=300,h=300,imagen_background="my_images/gui/menu/button/Window.png",color_background=None ,color_border=C_BLACK,active=False)
+form_pause_settings_menu = FormPauseSettings(name="pause_settings_menu",master_surface =screen,x=300,y=230,w=300,h=300,imagen_background="my_images/gui/menu/button/Window.png",color_background=None ,color_border=C_BLACK,active=False,main_menu=True)
 form_lose= FormLose(name="lose",master_surface = screen,x=100,y=155,w=680,h=500,imagen_background="my_images/gui/menu/button/Window.png",color_background=None ,color_border=C_BLACK,active=False)
 form_win= FormWin(name="win",master_surface = screen,x=100,y=155,w=680,h=400,imagen_background="my_images/gui/menu/button/Window.png",color_background=None ,color_border=C_BLACK,active=False)
 start_menu = FormStartMenu(name="start_menu",master_surface = screen,x=0,y=0,w=ANCHO_VENTANA,h=ALTO_VENTANA,color_background=(0,0,0),imagen_background= None,color_border=(255,0,255),active=True)

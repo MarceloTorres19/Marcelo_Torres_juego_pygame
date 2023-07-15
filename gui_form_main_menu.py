@@ -12,7 +12,7 @@ class FormMainMenu(Form):
 
         self.pantalla = master_surface
         self.boton0 = Button(master=self,x=500,y=330,w=350,h=80,color_background=None,color_border=None,image_background=None,on_click=self.on_click_boton1,on_click_param="level_selection",text="PLAY",font="8 BIT WONDER NOMINAL",font_size=60,font_color=C_WHITE)
-        self.boton2 = Button(master=self,x=500,y=500,w=350,h=40,color_background=None,color_border=None,image_background=None,on_click=self.on_click_boton1,on_click_param="pause_settings",text="SETTINGS",font="8 BIT WONDER NOMINAL",font_size=30,font_color=C_WHITE)
+        self.boton2 = Button(master=self,x=500,y=500,w=350,h=40,color_background=None,color_border=None,image_background=None,on_click=self.on_click_boton1,on_click_param="pause_settings_menu",text="SETTINGS",font="8 BIT WONDER NOMINAL",font_size=30,font_color=C_WHITE)
         self.boton3 = Button(master=self,x=500,y=540,w=350,h=40,color_background=None,color_border=None,image_background=None,on_click=self.on_click_boton1,on_click_param="puntuaciones",text="RANKING",font="8 BIT WONDER NOMINAL",font_size=30,font_color=C_WHITE)
         self.boton4 = Button(master=self,x=500,y=590,w=350,h=40,color_background=None,color_border=None,image_background=None,on_click=self.on_click_boton2,on_click_param=None,text="EXIT",font="8 BIT WONDER NOMINAL",font_size=30,font_color=C_WHITE)
         

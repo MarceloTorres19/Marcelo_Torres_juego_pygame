@@ -8,9 +8,9 @@ from constantes import *
 
 class FormPauseSettings(Form):
     
-    def __init__(self,name,master_surface,x,y,w,h,color_background,imagen_background,color_border,active):
+    def __init__(self,name,master_surface,x,y,w,h,color_background,imagen_background,color_border,active,main_menu = False):
         super().__init__(name,master_surface,x,y,w,h,color_background,imagen_background,color_border,active)
-
+        self.main_menu = main_menu
         self.text1 = Widget(master_form=self,x=80,y=30,w=150,h=40,color_background=None,color_border=None,image_background=None,text="MUSIC",font="8 BIT WONDER NOMINAL",font_size=25,font_color=C_WHITE)
         self.text2 = Widget(master_form=self,x=80,y=110,w=150,h=40,color_background=None,color_border=None,image_background=None,text="SFX",font="8 BIT WONDER NOMINAL",font_size=25,font_color=C_WHITE)
         self.pb1 = ProgressBar(master=self,x=59,y=75,w=180,h=30,color_background=None,color_border=None,image_background="my_images/gui/menu/button/bar.png",image_progress="my_images/gui/menu/button/bar_botton.png",value=3,value_max=10)
@@ -19,8 +19,14 @@ class FormPauseSettings(Form):
         self.boton2 = Button(master=self,x=32,y=160,w=20,h=20,color_background=None,color_border=None,image_background="my_images/gui/menu/button/minus.png",on_click=self.on_click_boton2,on_click_param=None,text=None,font=None,font_size=None,font_color=None)
         self.boton3 = Button(master=self,x=246,y=80,w=20,h=20,color_background=None,color_border=None,image_background="my_images/gui/menu/button/plus.png",on_click=self.on_click_boton3,on_click_param=None,text=None,font=None,font_size=None,font_color=None)
         self.boton4 = Button(master=self,x=246,y=160,w=20,h=20,color_background=None,color_border=None,image_background="my_images/gui/menu/button/plus.png",on_click=self.on_click_boton4,on_click_param=None,text=None,font=None,font_size=None,font_color=None)
-        self.boton5 = Button(master=self,x=65,y=220,w=180,h=23,color_background=None,color_border=None,image_background= None,on_click=self.on_click_boton5,on_click_param="pause",text="GO BACK",font="8 BIT WONDER NOMINAL",font_size=18,font_color=C_WHITE)
+        if self.main_menu:
+            param = "main_menu"
+        else:
+            param = "pause"
+            
+        self.boton5 = Button(master=self,x=65,y=220,w=180,h=23,color_background=None,color_border=None,image_background= None,on_click=self.on_click_boton5,on_click_param=param,text="GO BACK",font="8 BIT WONDER NOMINAL",font_size=18,font_color=C_WHITE)
         self.lista_widget = [self.text1,self.text2,self.pb1,self.pb2,self.boton1,self.boton2,self.boton3,self.boton4,self.boton5]
+            
 
     def on_click_boton1(self, parametro):
         if self.pb1.value > 0:
@@ -51,7 +57,11 @@ class FormPauseSettings(Form):
         for evento in lista_eventos:
              if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_ESCAPE:
-                    self.set_active("pause")
+                    if self.main_menu:
+                        param = "main_menu"
+                    else:
+                        param = "pause"
+                    self.set_active(param)
 
     def draw(self): 
         super().draw()
